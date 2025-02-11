@@ -8,7 +8,7 @@ load_dotenv()
 try:
     client = OpenAI(
         api_key=os.getenv('OPENAI_API_KEY'),  # 从环境变量获取API密钥
-        base_url='https://api.openai-hk.com/v1'
+        base_url=os.getenv('OPENAI_BASE_URL')
     )
     
     completion = client.chat.completions.create(
